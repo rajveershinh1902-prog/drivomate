@@ -92,14 +92,26 @@ export default function Technology() {
         </div>
 
         {/* Intro */}
-        <div className="mb-24 bg-gradient-to-r from-green-900/30 to-gray-900/60 border border-green-500/20 rounded-3xl p-14 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
-            The Technology Stack Behind Our Solutions
-          </h2>
-          <p className="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
-            We integrate artificial intelligence, computer vision, sensor fusion,
-            and embedded computing to deliver real-time, automotive-grade solutions.
-          </p>
+        <div className="mb-24 bg-gradient-to-r from-green-900/30 to-gray-900/60 border border-green-500/20 rounded-3xl overflow-hidden">
+          <div className="grid md:grid-cols-2 gap-0">
+            <div className="p-14 flex flex-col justify-center">
+              <h2 className="text-3xl font-bold text-white mb-4">
+                The Technology Stack Behind Our Solutions
+              </h2>
+              <p className="text-gray-300 text-lg leading-relaxed">
+                We integrate artificial intelligence, computer vision, sensor fusion,
+                and embedded computing to deliver real-time, automotive-grade solutions.
+              </p>
+            </div>
+            <div className="relative min-h-[300px]">
+              <img
+                src="https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Advanced automotive technology"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-l from-transparent to-gray-900/60" />
+            </div>
+          </div>
         </div>
 
         {/* Technology Cards */}

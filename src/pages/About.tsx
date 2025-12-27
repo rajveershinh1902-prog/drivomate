@@ -43,9 +43,9 @@ export default function About() {
         </div>
 
         {/* Who We Are */}
-        <div className="bg-gray-900/60 border border-gray-800 rounded-3xl p-10 md:p-14 mb-20">
-          <div className="grid md:grid-cols-2 gap-14 items-center">
-            <div>
+        <div className="bg-gray-900/60 border border-gray-800 rounded-3xl overflow-hidden mb-20">
+          <div className="grid md:grid-cols-2 gap-0">
+            <div className="p-10 md:p-14">
               <h2 className="text-3xl font-bold text-white mb-6">
                 Who We Are
               </h2>
@@ -60,21 +60,30 @@ export default function About() {
                   Our solutions are designed for real-world applications, rigorously tested, and built to scale across the automotive ecosystem.
                 </p>
               </div>
+
+              <div className="mt-8 bg-gradient-to-br from-green-900/30 to-gray-900/50 border border-green-500/20 rounded-2xl p-6">
+                <h3 className="text-xl font-semibold text-white mb-3">
+                  Our Mission
+                </h3>
+                <p className="text-gray-300 leading-relaxed mb-4 text-sm">
+                  To revolutionize road safety and intelligent transportation through cutting-edge AI, computer vision, and embedded systems.
+                </p>
+                <h3 className="text-xl font-semibold text-white mb-3">
+                  Our Vision
+                </h3>
+                <p className="text-gray-300 leading-relaxed text-sm">
+                  A future where every vehicle is equipped with intelligent systems that prevent accidents, save lives, and make mobility seamless.
+                </p>
+              </div>
             </div>
 
-            <div className="bg-gradient-to-br from-green-900/30 to-gray-900/50 border border-green-500/20 rounded-2xl p-8">
-              <h3 className="text-2xl font-semibold text-white mb-4">
-                Our Mission
-              </h3>
-              <p className="text-gray-300 leading-relaxed mb-6">
-                To revolutionize road safety and intelligent transportation through cutting-edge AI, computer vision, and embedded systems.
-              </p>
-              <h3 className="text-2xl font-semibold text-white mb-4">
-                Our Vision
-              </h3>
-              <p className="text-gray-300 leading-relaxed">
-                A future where every vehicle is equipped with intelligent systems that prevent accidents, save lives, and make mobility seamless.
-              </p>
+            <div className="relative min-h-[500px]">
+              <img
+                src="https://images.pexels.com/photos/1202723/pexels-photo-1202723.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Team working on automotive technology"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-l from-transparent to-gray-900/80" />
             </div>
           </div>
         </div>

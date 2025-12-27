@@ -81,14 +81,26 @@ export default function Careers({ onNavigate }: CareersProps) {
         </div>
 
         {/* Why Work Here */}
-        <div className="mb-20 bg-gradient-to-r from-green-900/30 to-gray-900/60 border border-green-500/20 rounded-3xl p-14 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
-            Why Work at Drivomate?
-          </h2>
-          <p className="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
-            We're a startup that values innovation, collaboration, and impact.
-            At Drivomate, you'll work on real-world problems that matter and build technology that saves lives.
-          </p>
+        <div className="mb-20 bg-gradient-to-r from-green-900/30 to-gray-900/60 border border-green-500/20 rounded-3xl overflow-hidden">
+          <div className="grid md:grid-cols-2 gap-0">
+            <div className="relative min-h-[300px] order-2 md:order-1">
+              <img
+                src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Team collaboration"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent to-gray-900/60" />
+            </div>
+            <div className="p-14 flex flex-col justify-center order-1 md:order-2">
+              <h2 className="text-3xl font-bold text-white mb-4">
+                Why Work at Drivomate?
+              </h2>
+              <p className="text-gray-300 text-lg leading-relaxed">
+                We're a startup that values innovation, collaboration, and impact.
+                At Drivomate, you'll work on real-world problems that matter and build technology that saves lives.
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Benefits */}

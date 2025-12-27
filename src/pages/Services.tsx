@@ -15,6 +15,7 @@ export default function Services() {
         "Blind Spot Detection",
         "Parking Assistance Systems",
       ],
+      image: "https://images.pexels.com/photos/13065690/pexels-photo-13065690.jpeg?auto=compress&cs=tinysrgb&w=800",
     },
     {
       Icon: Eye,
@@ -29,6 +30,7 @@ export default function Services() {
         "Real-time Scene Understanding",
         "Night Vision Enhancement",
       ],
+      image: "https://images.pexels.com/photos/2882639/pexels-photo-2882639.jpeg?auto=compress&cs=tinysrgb&w=800",
     },
     {
       Icon: AlertTriangle,
@@ -43,6 +45,7 @@ export default function Services() {
         "Fleet Safety Management",
         "Real-time Alert Systems",
       ],
+      image: "https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=800",
     },
     {
       Icon: Gauge,
@@ -57,6 +60,7 @@ export default function Services() {
         "Route Optimization",
         "Connected Vehicle Solutions",
       ],
+      image: "https://images.pexels.com/photos/1545743/pexels-photo-1545743.jpeg?auto=compress&cs=tinysrgb&w=800",
     },
   ];
 
@@ -77,22 +81,22 @@ export default function Services() {
 
         {/* Solutions */}
         <div className="space-y-14">
-          {solutions.map(({ Icon, title, description, features }) => (
+          {solutions.map(({ Icon, title, description, features, image }, index) => (
             <div
               key={title}
-              className="bg-gray-900/60 border border-gray-800 rounded-3xl p-10 md:p-14 hover:border-green-500/50 hover:shadow-xl hover:shadow-green-500/10 transition"
+              className="bg-gray-900/60 border border-gray-800 rounded-3xl overflow-hidden hover:border-green-500/50 hover:shadow-xl hover:shadow-green-500/10 transition"
             >
-              <div className="flex flex-col md:flex-row gap-10">
-                <div className="flex-shrink-0">
-                  <div className="bg-green-500/10 w-16 h-16 rounded-2xl flex items-center justify-center">
-                    <Icon size={32} className="text-green-400" />
+              <div className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-0`}>
+                <div className="flex-1 p-10 md:p-14">
+                  <div className="flex items-start gap-4 mb-6">
+                    <div className="bg-green-500/10 w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0">
+                      <Icon size={32} className="text-green-400" />
+                    </div>
+                    <h2 className="text-2xl sm:text-3xl font-bold text-white mt-2">
+                      {title}
+                    </h2>
                   </div>
-                </div>
 
-                <div className="flex-1">
-                  <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
-                    {title}
-                  </h2>
                   <p className="text-gray-300 text-lg leading-relaxed mb-8">
                     {description}
                   </p>
@@ -104,10 +108,19 @@ export default function Services() {
                         className="flex items-center gap-3 text-gray-400"
                       >
                         <span className="w-2 h-2 bg-green-400 rounded-full" />
-                        <span>{feature}</span>
+                        <span className="text-sm">{feature}</span>
                       </div>
                     ))}
                   </div>
+                </div>
+
+                <div className="relative w-full md:w-2/5 min-h-[400px]">
+                  <img
+                    src={image}
+                    alt={title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-gray-900/80 to-transparent" />
                 </div>
               </div>
             </div>

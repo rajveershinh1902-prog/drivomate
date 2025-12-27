@@ -11,24 +11,28 @@ export default function Home({ onNavigate }: HomeProps) {
       title: "ADAS Solutions",
       description:
         "Advanced Driver Assistance Systems that enhance vehicle safety and prevent collisions through real-time monitoring and alerts.",
+      image: "https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg?auto=compress&cs=tinysrgb&w=800",
     },
     {
       Icon: Brain,
       title: "AI-Powered Automotive Systems",
       description:
         "Intelligent systems leveraging machine learning and computer vision to enable smarter, safer driving experiences.",
+      image: "https://images.pexels.com/photos/8438922/pexels-photo-8438922.jpeg?auto=compress&cs=tinysrgb&w=800",
     },
     {
       Icon: Radio,
       title: "Smart Vehicle Safety",
       description:
         "Comprehensive safety solutions that monitor driver behavior, road conditions, and vehicle health in real-time.",
+      image: "https://images.pexels.com/photos/163016/crash-test-collision-60-km-h-distraction-163016.jpeg?auto=compress&cs=tinysrgb&w=800",
     },
     {
       Icon: Cpu,
       title: "Embedded & IoT Systems",
       description:
         "Cutting-edge embedded solutions and IoT connectivity for seamless vehicle-to-everything communication.",
+      image: "https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg?auto=compress&cs=tinysrgb&w=800",
     },
   ];
 
@@ -37,6 +41,15 @@ export default function Home({ onNavigate }: HomeProps) {
       
       {/* ================= HERO ================= */}
       <div className="relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 opacity-20">
+          <img
+            src="https://images.pexels.com/photos/3802508/pexels-photo-3802508.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            alt="Automotive technology"
+            className="w-full h-full object-cover"
+          />
+        </div>
+
         {/* Glow */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(34,197,94,0.18),transparent_65%)]" />
 
@@ -90,23 +103,33 @@ export default function Home({ onNavigate }: HomeProps) {
         </div>
 
         <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-          {features.map(({ Icon, title, description }) => (
+          {features.map(({ Icon, title, description, image }) => (
             <div
               key={title}
-              className="group bg-gray-900/60 border border-gray-800 rounded-2xl p-8
+              className="group bg-gray-900/60 border border-gray-800 rounded-2xl overflow-hidden
                 hover:border-green-500/50 hover:shadow-xl hover:shadow-green-500/10
                 transition transform hover:-translate-y-1"
             >
-              <div className="mb-6 w-14 h-14 flex items-center justify-center rounded-xl bg-green-500/10 group-hover:bg-green-500/20 transition">
-                <Icon size={28} className="text-green-400" />
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src={image}
+                  alt={title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-80" />
+                <div className="absolute bottom-4 left-4 w-12 h-12 flex items-center justify-center rounded-xl bg-green-500/20 backdrop-blur-sm border border-green-500/30">
+                  <Icon size={24} className="text-green-400" />
+                </div>
               </div>
 
-              <h3 className="text-xl font-semibold text-white mb-3">
-                {title}
-              </h3>
-              <p className="text-gray-400 leading-relaxed">
-                {description}
-              </p>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-white mb-3">
+                  {title}
+                </h3>
+                <p className="text-gray-400 leading-relaxed text-sm">
+                  {description}
+                </p>
+              </div>
             </div>
           ))}
         </div>
